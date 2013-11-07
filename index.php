@@ -1,6 +1,6 @@
 ﻿<html>
 	<head>
-		<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
 	</head>
 	
 	<body>
@@ -32,14 +32,14 @@
 	//print_r (rawurlencode(htmlspecialchars_decode($realm[8],ENT_QUOTES)));
 	
 	$GLOBALS['wowarmory']['db']['driver'] = 'mysql'; // Dont change. Only mysql supported so far.
-    $GLOBALS['wowarmory']['db']['hostname'] = '127.0.0.1'; // Hostname of server. 
-    $GLOBALS['wowarmory']['db']['dbname'] = 'wowarmoryapi'; //Name of your database
-    $GLOBALS['wowarmory']['db']['username'] = 'root'; //Insert your database username
-    $GLOBALS['wowarmory']['db']['password'] = ''; //Insert your database password
-    // Only use the two below if you have received API keys from Blizzard.
-    $GLOBALS['wowarmory']['keys']['private'] = ''; // if you have an API key from Blizzard
-    $GLOBALS['wowarmory']['keys']['public'] = ''; // if you have an API key from Blizzard
-    include('./wowarmoryapi/BattlenetArmory.class.php'); //include the main class 
+    	$GLOBALS['wowarmory']['db']['hostname'] = '127.0.0.1'; // Hostname of server. 
+    	$GLOBALS['wowarmory']['db']['dbname'] = 'wowarmoryapi'; //Name of your database
+    	$GLOBALS['wowarmory']['db']['username'] = 'root'; //Insert your database username
+    	$GLOBALS['wowarmory']['db']['password'] = ''; //Insert your database password
+    	// Only use the two below if you have received API keys from Blizzard.
+    	$GLOBALS['wowarmory']['keys']['private'] = ''; // if you have an API key from Blizzard
+    	$GLOBALS['wowarmory']['keys']['public'] = ''; // if you have an API key from Blizzard
+    	include('./wowarmoryapi/BattlenetArmory.class.php'); //include the main class 
 
 
 	for($i=0;$i<count($player);$i++){
@@ -48,8 +48,7 @@
 		
 		$gear = $character->getGear();		
 		
-		if ($gear["averageItemLevel"] > 490 && $gear["averageItemLevelEquipped"] > 490)
-		{
+		if ($gear["averageItemLevel"] > 490 && $gear["averageItemLevelEquipped"] > 490){
 			$mAIL[$c] = $gear["averageItemLevel"];
 			$mAILE[$c] = $gear["averageItemLevelEquipped"];
 			$c++;
@@ -80,9 +79,9 @@
                                   'rendererOptions'=>array('fillToZero'=>true),
                                   'pointLabels'=>array('show'=>true)));
 		$pc->set_axes(array(
-         //'yaxis'=>array('autoscale'=>true),
-         'xaxis'=>array('renderer'=>'plugin::CategoryAxisRenderer','ticks'=>$ticks)
-		));
+         		//'yaxis'=>array('autoscale'=>true),
+         		'xaxis'=>array('renderer'=>'plugin::CategoryAxisRenderer','ticks'=>$ticks)
+         		));
 
 		$pc->draw(1200,300);
 	}
